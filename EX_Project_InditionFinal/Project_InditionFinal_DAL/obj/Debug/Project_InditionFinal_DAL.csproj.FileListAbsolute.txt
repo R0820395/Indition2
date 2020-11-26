@@ -1,0 +1,17 @@
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\Project_InditionFinal_DAL.dll.config
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\Project_InditionFinal_DAL.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\Project_InditionFinal_DAL.pdb
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\EntityFramework.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\MaterialDesignColors.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\EntityFramework.xml
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\MaterialDesignColors.pdb
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\obj\Debug\Project_InditionFinal_DAL.csprojAssemblyReference.cache
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\obj\Debug\Project_InditionFinal_DAL.csproj.CoreCompileInputs.cache
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\obj\Debug\Project_InditionFinal_DAL.csproj.CopyComplete
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\obj\Debug\Project_InditionFinal_DAL.dll
+C:\Users\debie\OneDrive\Bureaublad\newIndition\EX_Project_InditionFinal\Project_InditionFinal_DAL\obj\Debug\Project_InditionFinal_DAL.pdb

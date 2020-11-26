@@ -1,0 +1,42 @@
+﻿<Window x:Class="Project_InditionFinal_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_InditionFinal_WPF"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnKlantenbeheer" Grid.Row="0" Grid.Column="0"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Height="100" Margin="20" VerticalAlignment="Center" Click="btnKlantenbeheer_Click">
+            Klantenbeheer
+        </Button>
+        <Button x:Name="btnArchief" Grid.Row="1" Grid.Column="0" Height="100" Margin="20" VerticalAlignment="Center"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnArchief_Click">
+            Archief
+        </Button>
+        <Button x:Name="btnOpties" Grid.Row="0" Grid.Column="1" Height="100" Margin="20" VerticalAlignment="Center"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnOpties_Click">
+            Opties
+        </Button>
+    </Grid>
+</Window>

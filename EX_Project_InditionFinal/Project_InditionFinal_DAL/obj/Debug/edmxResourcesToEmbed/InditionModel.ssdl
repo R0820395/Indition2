@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InditionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Afspraken">
+    <Key>
+      <PropertyRef Name="afspraak_id" />
+    </Key>
+    <Property Name="afspraak_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="afspraak_klant" Type="int" Nullable="false" />
+    <Property Name="afspraak_datum" Type="datetime" Nullable="false" />
+    <Property Name="afspraak_nota" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Behandelingen">
+    <Key>
+      <PropertyRef Name="behandeling_id" />
+    </Key>
+    <Property Name="behandeling_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="behandeling_klant" Type="int" Nullable="false" />
+    <Property Name="behandeling_nota" Type="nvarchar" MaxLength="100" />
+    <Property Name="behandeling_datum" Type="datetime" Nullable="false" />
+    <Property Name="behandeling_isVoorafBehandeld" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BehandelingLijn">
+    <Key>
+      <PropertyRef Name="behandelingLijn_id" />
+    </Key>
+    <Property Name="behandelingLijn_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="behandelingLijn_behandeling" Type="int" Nullable="false" />
+    <Property Name="behandelingLijn_product" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klanten">
+    <Key>
+      <PropertyRef Name="klant_id" />
+    </Key>
+    <Property Name="klant_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="klant_voornaam" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="klant_familienaam" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="klant_telefoon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="klant_e-mail" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="klant_adres" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="klant_adresnummer" Type="int" Nullable="false" />
+    <Property Name="klant_plaats" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="klant_postcode" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="klant_isArchived" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producten">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_naam" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="product_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="product_isArchived" Type="bit" Nullable="false" />
+    <Property Name="product_nota" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_afspraak_klant">
+    <End Role="Klanten" Type="Self.Klanten" Multiplicity="1" />
+    <End Role="Afspraken" Type="Self.Afspraken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klanten">
+        <PropertyRef Name="klant_id" />
+      </Principal>
+      <Dependent Role="Afspraken">
+        <PropertyRef Name="afspraak_klant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_behandeling_klant">
+    <End Role="Klanten" Type="Self.Klanten" Multiplicity="1" />
+    <End Role="Behandelingen" Type="Self.Behandelingen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klanten">
+        <PropertyRef Name="klant_id" />
+      </Principal>
+      <Dependent Role="Behandelingen">
+        <PropertyRef Name="behandeling_klant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_behandelingLijn_behandeling">
+    <End Role="Behandelingen" Type="Self.Behandelingen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BehandelingLijn" Type="Self.BehandelingLijn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Behandelingen">
+        <PropertyRef Name="behandeling_id" />
+      </Principal>
+      <Dependent Role="BehandelingLijn">
+        <PropertyRef Name="behandelingLijn_behandeling" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_behandelingLijn_product">
+    <End Role="Producten" Type="Self.Producten" Multiplicity="1" />
+    <End Role="BehandelingLijn" Type="Self.BehandelingLijn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producten">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="BehandelingLijn">
+        <PropertyRef Name="behandelingLijn_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InditionModelStoreContainer">
+    <EntitySet Name="Afspraken" EntityType="Self.Afspraken" Schema="IND" store:Type="Tables" />
+    <EntitySet Name="Behandelingen" EntityType="Self.Behandelingen" Schema="IND" store:Type="Tables" />
+    <EntitySet Name="BehandelingLijn" EntityType="Self.BehandelingLijn" Schema="IND" store:Type="Tables" />
+    <EntitySet Name="Klanten" EntityType="Self.Klanten" Schema="IND" store:Type="Tables" />
+    <EntitySet Name="Producten" EntityType="Self.Producten" Schema="IND" store:Type="Tables" />
+    <AssociationSet Name="FK_afspraak_klant" Association="Self.FK_afspraak_klant">
+      <End Role="Klanten" EntitySet="Klanten" />
+      <End Role="Afspraken" EntitySet="Afspraken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_behandeling_klant" Association="Self.FK_behandeling_klant">
+      <End Role="Klanten" EntitySet="Klanten" />
+      <End Role="Behandelingen" EntitySet="Behandelingen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_behandelingLijn_behandeling" Association="Self.FK_behandelingLijn_behandeling">
+      <End Role="Behandelingen" EntitySet="Behandelingen" />
+      <End Role="BehandelingLijn" EntitySet="BehandelingLijn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_behandelingLijn_product" Association="Self.FK_behandelingLijn_product">
+      <End Role="Producten" EntitySet="Producten" />
+      <End Role="BehandelingLijn" EntitySet="BehandelingLijn" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

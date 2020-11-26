@@ -1,0 +1,164 @@
+﻿<Window x:Class="Project_InditionFinal_WPF.KlantDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_InditionFinal_WPF"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="KlantDetailsWindow" Height="687.295" Width="1060.656" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"></ColumnDefinition>
+            <ColumnDefinition Width="37*"></ColumnDefinition>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" Margin="10">
+            <GroupBox Header="Klant">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtVoornaamKlantdetails" Grid.Row="0" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Voornaam"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <TextBox x:Name="txtFamilienaamKlantdetails" Grid.Row="1" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Familienaam"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                        <TextBox x:Name="txtStraatKlantdetails" Grid.Row="2" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Straat" Margin="0,0,10,0"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" Width="135" />
+                        <TextBox x:Name="txtStraatnummerKlantdetails" Grid.Row="2" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Nummer"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    </StackPanel>
+                    <TextBox x:Name="txtStadKlantdetails" Grid.Row="3" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Stad"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <TextBox x:Name="txtPostcodeKlantdetails" Grid.Row="4" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Postcode"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <TextBox x:Name="txtTelefoonKlantdetails" Grid.Row="5" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Telefoon"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <TextBox x:Name="txtEmailKlantDetails" Grid.Row="6" Grid.Column="1"
+  materialDesign:HintAssist.Hint="E-mail"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
+                    <Label Content="Voornaam" Margin="5" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Familienaam" Margin="5" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Straat" Margin="5" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Stad" Margin="5" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Postcode" Margin="5" Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Telefoon" Margin="5" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                    <Label Content="E-mail" Margin="5" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom"></Label>
+                </Grid>
+            </GroupBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnOpslaanKlantdetails" Grid.Column="0" Margin="5"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnOpslaanKlantdetails_Click">
+                    Opslaan
+                </Button>
+                <Button x:Name="btnVerwijderenKlantdetails" Grid.Column="1" Margin="5"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnVerwijderenKlantdetails_Click">
+                    Verwijderen
+                </Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <GroupBox Margin="10" Header="Kleuren" Height="180">
+                <ScrollViewer>
+                    <ListBox x:Name="listKleurenKlantdetails"></ListBox>
+                </ScrollViewer>
+            </GroupBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnAanmakenKleurKlantdetails" Grid.Column="0" Margin="10"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnAanmakenKleurKlantdetails_Click">
+                    Behandeling Kleur Toevoegen
+                </Button>
+                <Button x:Name="btnWijzigenKleurKlantdetails" Grid.Column="1" Margin="10"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnWijzigenKleurKlantdetails_Click">
+                    Wijzigen
+                </Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <GroupBox Margin="10" Header="Permanenten" Height="180">
+                <ScrollViewer>
+                    <ListBox x:Name="listPermanentenKlantdetails"></ListBox>
+                </ScrollViewer>
+            </GroupBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnAanmakenPermanentKlantdetails" Grid.Column="0" Margin="10"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnAanmakenPermanentKlantdetails_Click">
+                    Behandeling Permanent Toevoegen
+                </Button>
+                <Button x:Name="btnWijzigenPermanentKlantdetails" Grid.Column="1" Margin="10"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnWijzigenPermanentKlantdetails_Click">
+                    Wijzigen
+                </Button>
+            </Grid>
+        </StackPanel>
+        <Button x:Name="btnSluitenKlantdetails" Grid.Row="3" Grid.Column="0" Margin="5,22"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="auto"
+    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btnSluitenKlantdetails_Click">
+            Sluiten
+        </Button>
+    </Grid>
+</Window>
